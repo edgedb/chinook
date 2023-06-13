@@ -1,0 +1,4 @@
+venv/
+.vscode/
+
+data/id_mappings.json
