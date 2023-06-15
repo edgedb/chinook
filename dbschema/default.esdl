@@ -11,7 +11,7 @@ module default {
         billing_postal_code: str;
         total: decimal;
 
-        multi link items: Track {
+        multi link items: Content {
             unit_price: decimal;
             quantity: int64;
         };
@@ -48,15 +48,25 @@ module default {
         fax: str;
         email: str;
     };
-    type Track {
+
+    type Content {
         name: str;
+        unit_price: decimal;
+    }
+
+    type Movie extending Content {
+        release_year: int64;
+    };
+
+    type Track extending Content {
+        
         link album: Album;
         link media_type: MediaType;
         link genre: Genre;
         composer: str;
         milliseconds: int64;
         bytes: int64;
-        unit_price: decimal;
+        
     };
 
     type Genre {
